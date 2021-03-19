@@ -37,6 +37,7 @@ public class ConexionJavaInfSII {
             //1.- Cargar Driver
             Class.forName("com.mysql.jdbc.Driver");
             
+            //declaracion de variables que nos ayudan a la conexion con la bases de datos y el driver
             dbHost="jdbc:mysql://localhost:3306/";
             dbName = "fes_ico";
             dbUser = "root";
@@ -47,14 +48,19 @@ public class ConexionJavaInfSII {
             
             Connection conecta = DriverManager.getConnection(dbHost+dbName,dbUser,dbPassword);
             
+            //generar y madnar la consulta con ayuda de la conexion que es conecta
             Statement st = conecta.createStatement();
             
+            //objeto de tipo tabla que nos va a ayudar a pintar en consola nuestros datos de la tablas 
            ResultSet  rs = st.executeQuery("SELECT * FROM alumno");
            
+           //si no tenemos ningun registro nos manda el mensaje del print
             if (rs.wasNull()) {
                 System.out.println("No hay nada en la tabla alumno");
             }
             
+            
+            //Gestionamos la menera en que se ven los registros con el st  el next nos ayuda a controlar hasta donde se va a romper el while
             while (rs.next()) {
                 
                 System.out.println(rs.getString("nombre_usuario")+" "+rs.getString("carrera")+" "+rs.getString("no_cuenta"));
