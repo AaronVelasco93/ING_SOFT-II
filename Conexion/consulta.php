@@ -1,7 +1,7 @@
 <?php
-include ("conexion.php");
+require "conexion.php";
 mysqli_set_charset($conexion,'utf8');
-$conexion = new mysqli('localhost','root','123456','php_test');
+//$conexion = new mysqli('localhost','root','123456','php_test');
 
 //consulta en sql
 $consulta_sql = "SELECT * FROM usuarios";
@@ -10,8 +10,7 @@ $consulta_sql = "SELECT * FROM usuarios";
 $resultado = $conexion->query($consulta_sql);
 
 
-$count = mysqli_num_rows($resultado);
-
+$count = mysqli_num_rows($resultado); 
 //creacion de unas columas con ayuda de html
 
 echo "<table border='2' >";
@@ -36,7 +35,7 @@ echo "</tr>";
 
 
     }
-
+echo "test_php";
 
 }else{
 

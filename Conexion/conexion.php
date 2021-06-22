@@ -15,12 +15,15 @@ $user_db="root";
 $pass_db="123456";
 $host_db="localhost";
 
-$conexion = mysqli_connect($host_db,$user_db,$pass_db);
 
-if($conexion){
-echo "<p align='center'  style='color:red' >MySQL le da permisos a PHP para que pueda ejecutar consultas</p>";
+$conexion = new mysqli($host_db, $user_db,$pass_db,$db_name);
 
-}else{
+//$conexion = mysqli_connect($host_db,$user_db,$pass_db);
+
+if($conexion->connect_error){
+    echo"<h1>MySQL le esta dando permisos para ejecutar consultas</h1>";
+}
+else{
     echo " <p align='center' style='color:red'>Tienes un error en el conexion devido a esto no puedes hacer consultas</p>";
 }
 
