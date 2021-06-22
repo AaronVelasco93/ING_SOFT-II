@@ -2,6 +2,7 @@
     require "conexion.php";
     mysqli_set_charset($conexion, 'utf8');
 
+    //$registroEliminado=$_POST['no_cuenta'];
     $registroEliminado=$_POST['no_cuenta'];
 
 
