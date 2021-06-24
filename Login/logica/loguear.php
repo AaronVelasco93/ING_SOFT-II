@@ -16,7 +16,7 @@
     if($array['contar']>0){
 
         $_SESSION['userNumeroCuenta']=$no_cuenta;
-        header("locatio: ../Principal.php");
+        header("location: ../Principal.php");
 
     }else {
 
